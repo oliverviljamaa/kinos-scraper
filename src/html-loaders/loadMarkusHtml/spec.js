@@ -9,6 +9,11 @@ const request = require('request-promise');
 const loadHtml = require('../loadHtml');
 
 describe('loadMarkusHtml', () => {
+  afterEach(() => {
+    request.mockClear();
+    loadHtml.mockClear();
+  });
+
   it('requests with correct payload', () =>
     loadMarkusHtml('https://cinema-url.com', 1234, new Date(2017, 9, 3)).then(() => {
       const expectedOptions = {
@@ -23,9 +28,10 @@ describe('loadMarkusHtml', () => {
       expect(request).toHaveBeenCalledWith(expectedOptions);
     }));
 
-  it('calls loadHtml with html from request response', () => {
-    expect(loadHtml).toHaveBeenCalledWith('Requested HTML');
-  });
+  it('calls loadHtml with html from request response', () =>
+    loadMarkusHtml('https://cinema-url.com', 1234, new Date(2017, 9, 3)).then(() => {
+      expect(loadHtml).toHaveBeenCalledWith('Requested HTML');
+    }));
 
   it('returns loadHtml html', () => loadMarkusHtml('https://cinema-url.com', 1234, new Date(2017, 9, 3)).then((html) => {
     expect(html).toBe('Loaded HTML');
