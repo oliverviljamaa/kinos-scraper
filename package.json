@@ -1,0 +1,16 @@
+{
+  "name": "kinos-scraper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:oliverviljamaa/kinos-scraper.git",
+    "type": "git"
+  },
+  "author": "Oliver Viljamaa <oliver.viljamaa@gmail.com>",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.1.0"
+  }
+}
