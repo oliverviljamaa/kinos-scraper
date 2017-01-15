@@ -2,6 +2,10 @@
   "name": "kinos-scraper",
   "version": "0.1.0",
   "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
   "repository": {
     "url": "git@github.com:oliverviljamaa/kinos-scraper.git",
     "type": "git"
