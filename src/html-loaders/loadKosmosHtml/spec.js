@@ -1,16 +1,12 @@
 const loadKosmosHtml = require('./');
 const headers = require('../headers');
 
-jest.mock('request-promise', () => jest.fn(() => Promise.resolve('Requested HTML')));
-jest.mock('../loadHtml', () => jest.fn(() => Promise.resolve('Loaded HTML')));
-
+jest.mock('request-promise', () => jest.fn(() => Promise.resolve('HTML')));
 const request = require('request-promise');
-const loadHtml = require('../loadHtml');
 
 describe('loadKosmosHtml', () => {
   afterEach(() => {
     request.mockClear();
-    loadHtml.mockClear();
   });
 
   it('requests with correct payload', () =>
@@ -21,13 +17,8 @@ describe('loadKosmosHtml', () => {
       });
     }));
 
-  it('calls loadHtml with html from request response', () =>
-    loadKosmosHtml().then(() => {
-      expect(loadHtml).toHaveBeenCalledWith('Requested HTML');
-    }));
-
-  it('returns loadHtml html', () =>
+  it('returns html', () =>
     loadKosmosHtml().then((html) => {
-      expect(html).toBe('Loaded HTML');
+      expect(html).toBe('HTML');
     }));
 });

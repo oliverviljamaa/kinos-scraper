@@ -1,16 +1,13 @@
 const loadSoprusHtml = require('./');
 const headers = require('../headers');
 
-jest.mock('request-promise', () => jest.fn(() => Promise.resolve('Requested HTML')));
-jest.mock('../loadHtml', () => jest.fn(() => Promise.resolve('Loaded HTML')));
+jest.mock('request-promise', () => jest.fn(() => Promise.resolve('HTML')));
 
 const request = require('request-promise');
-const loadHtml = require('../loadHtml');
 
 describe('loadSoprusHtml', () => {
   afterEach(() => {
     request.mockClear();
-    loadHtml.mockClear();
   });
 
   it('requests with correct payload', () =>
@@ -23,12 +20,7 @@ describe('loadSoprusHtml', () => {
       expect(request).toHaveBeenCalledWith(expectedOptions);
     }));
 
-  it('calls loadHtml with html from request response', () =>
-    loadSoprusHtml().then(() => {
-      expect(loadHtml).toHaveBeenCalledWith('Requested HTML');
-    }));
-
-  it('returns loadHtml html', () => loadSoprusHtml().then((html) => {
-    expect(html).toBe('Loaded HTML');
+  it('returns html', () => loadSoprusHtml().then((html) => {
+    expect(html).toBe('HTML');
   }));
 });
