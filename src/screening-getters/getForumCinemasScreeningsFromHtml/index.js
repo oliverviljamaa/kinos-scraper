@@ -65,7 +65,7 @@ const getScreeningsFromDocument = document =>
     ];
   }, []);
 
-const getApolloScreeningsFromHtml = html =>
+const getForumCinemasScreeningsFromHtml = html =>
   jsdom
     .envAsync(html)
     .then(window => window.document)
@@ -74,4 +74,4 @@ const getApolloScreeningsFromHtml = html =>
       throw new Error(err);
     });
 
-module.exports = getApolloScreeningsFromHtml;
+module.exports = getForumCinemasScreeningsFromHtml;
