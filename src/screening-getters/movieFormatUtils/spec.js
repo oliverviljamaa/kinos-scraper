@@ -1,8 +1,4 @@
-const movieFormatUtils = require('./');
-
-const getLanguage = movieFormatUtils.getLanguage;
-const getDimensions = movieFormatUtils.getDimensions;
-const getIfIsImax = movieFormatUtils.getIfIsImax;
+const { getLanguage, getDimensions, getIfIsImax } = require('./');
 
 describe('movieFormatUtils', () => {
   describe('getLanguage', () => {

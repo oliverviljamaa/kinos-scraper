@@ -2,17 +2,9 @@ const Promise = require('bluebird');
 const jsdom = Promise.promisifyAll(require('jsdom'));
 const moment = require('moment');
 
-const movieFormatUtils = require('../movieFormatUtils');
+const { getLanguage, getDimensions } = require('../movieFormatUtils');
+const { findAll, removeUnnecessarySpaces, removeParentheses } = require('../utils');
 
-const getLanguage = movieFormatUtils.getLanguage;
-const getDimensions = movieFormatUtils.getDimensions;
-
-
-const removeUnnecessarySpaces = string => string.replace(/\s+/g, ' ').trim();
-
-const removeParentheses = string => string.replace(/\(|\)/g, '');
-
-const findAll = (element, query) => [].slice.call(element.querySelectorAll(query));
 
 const getMovieNodesFromDocument = document => findAll(document, '.panel-EventBlock');
 
@@ -64,6 +56,8 @@ const getScreeningsFromDocument = document =>
       const title = getTitleFromNode(titleWithYearNode) || estonianTitle;
       const year = getYearFromNode(titleWithYearNode);
 
+      const isImax = false;
+
       const movieScreenings = getMovieScreeningNodes(movieNode).map(node => ({
         title,
         year,
@@ -72,7 +66,7 @@ const getScreeningsFromDocument = document =>
         link: getLinkFromNode(node),
         language,
         dimensions,
-        isImax: false,
+        isImax,
       }));
 
       return [
