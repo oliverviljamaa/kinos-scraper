@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "jest --noStackTrace",
+    "test:watch": "jest --watch --noStackTrace"
   },
   "repository": {
     "url": "git@github.com:oliverviljamaa/kinos-scraper.git",
