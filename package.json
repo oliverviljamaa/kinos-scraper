@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --noStackTrace",
+    "lint": "eslint src",
+    "test": "yarn lint && jest --noStackTrace",
     "test:watch": "jest --watch --noStackTrace"
   },
   "repository": {
