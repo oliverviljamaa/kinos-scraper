@@ -5,7 +5,8 @@ const moment = require('moment');
 const { findAll, removeUnnecessarySpaces } = require('../utils');
 const { getLanguage, getDimensions } = require('../movieFormatUtils');
 
-const getMovieNodesFromDocument = document => findAll(document, '.result');
+const getMovieNodesFromDocument =
+  document => findAll(document, '.result').filter(node => node.children.length > 0);
 
 const getFormatNode = node => node.querySelector('.result_h4').parentNode;
 
