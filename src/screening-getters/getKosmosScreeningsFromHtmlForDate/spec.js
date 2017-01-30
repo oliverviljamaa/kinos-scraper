@@ -8,7 +8,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
   it('gets correct number of screenings', () =>
     getKosmosScreeningsFromHtmlForDate(testHtml, date).then((screenings) => {
       expect(screenings).toHaveLength(7);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -24,7 +24,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
         'Викинг',
         'Викинг',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -32,7 +32,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([null, null, null, null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -48,7 +48,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
         'Viiking',
         'Viiking',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -64,7 +64,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
         new Date(2017, 0, 26, 16),
         new Date(2017, 0, 26, 19, 45),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -80,7 +80,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
         'https://kinokosmos.ee/piletid/?sessionId=13554',
         'https://kinokosmos.ee/piletid/?sessionId=13551',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -88,7 +88,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
       const languages = screenings.map(screening => screening.language);
 
       expect(languages).toEqual(['et', 'et', null, null, null, 'ru', 'ru']);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -96,7 +96,7 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
       const dimensions = screenings.map(screening => screening.dimensions);
 
       expect(dimensions).toEqual([null, null, 3, 3, 3, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -104,6 +104,6 @@ describe('getKosmosScreeningsFromHtmlForDate', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, true, true, true, false, false]);
-    }),
+    })
   );
 });

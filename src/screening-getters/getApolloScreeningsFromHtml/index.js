@@ -22,7 +22,7 @@ const getTitleFromNode =
     : null;
 
 const getYearFromNode = node => parseInt(removeParentheses(removeUnnecessarySpaces(
-  node.querySelector('.productionYear').textContent,
+  node.querySelector('.productionYear').textContent
 )), 10);
 
 const getLanguageFromNode =
@@ -39,7 +39,7 @@ const getMovieScreeningNodes = node => findAll(node, 'a.btn');
 
 const getTimeForDocumentFromNode = (document, node) => moment(
   `${getSelectedDate(document)} ${removeUnnecessarySpaces(node.textContent)}`,
-  'DD.MM.YYYY HH:mm',
+  'DD.MM.YYYY HH:mm'
 ).toDate();
 
 const getLinkFromNode = node => node.href;

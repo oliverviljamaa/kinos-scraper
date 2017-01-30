@@ -20,8 +20,8 @@ describe('utils', () => {
       expect(
         removeUnnecessarySpaces(
           `  Eesti
-          keeles `,
-        ),
+          keeles `
+        )
       ).toBe('Eesti keeles');
     });
   });

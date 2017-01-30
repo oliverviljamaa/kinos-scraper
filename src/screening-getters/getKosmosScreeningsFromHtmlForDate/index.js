@@ -16,7 +16,7 @@ const getMovieNodesFromHtml = html => findAll(html, '.film-now-showing');
 const getEstonianTitleWithFormat = node => node.querySelector('h3 a').textContent;
 
 const cleanTitleFromFormatAndSpaces = title => removeUnnecessarySpaces(
-  title.replace(' 3D', '').replace(' IMAX', ''),
+  title.replace(' 3D', '').replace(' IMAX', '')
 );
 
 const getTitleWithFormat = node => node.querySelector('.originaltitle').textContent;
@@ -27,13 +27,13 @@ const getSelectedDate = html => html.id.substring(3);
 
 const getTimeForHtmlFromNode = (html, node) => moment(
   `${getSelectedDate(html)} ${removeUnnecessarySpaces(node.querySelector('.time-wrap').textContent)}`,
-  'YYYY-MM-DD HH:mm',
+  'YYYY-MM-DD HH:mm'
 ).toDate();
 
 const getLinkFromNode = node => node.querySelector('.time-wrap').href;
 
 const getLanguageFromNode = node => getLanguage(
-  node.querySelector('.attributes').textContent,
+  node.querySelector('.attributes').textContent
 );
 
 const getScreeningsFromHtml = html =>

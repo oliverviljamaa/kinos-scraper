@@ -6,7 +6,7 @@ describe('getArtisScreeningsFromHtml', () => {
   it('gets correct number of screenings', () =>
     getArtisScreeningsFromHtml(testHtml).then((screenings) => {
       expect(screenings).toHaveLength(5);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -20,7 +20,7 @@ describe('getArtisScreeningsFromHtml', () => {
         'Kuudes kerta',
         'Fallen City',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -28,7 +28,7 @@ describe('getArtisScreeningsFromHtml', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([null, null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -42,7 +42,7 @@ describe('getArtisScreeningsFromHtml', () => {
         'Kuues kord',
         'Kaotatud linn',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -56,7 +56,7 @@ describe('getArtisScreeningsFromHtml', () => {
         new Date(2017, 0, 24, 13, 5),
         new Date(2017, 0, 24, 19, 30),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -70,7 +70,7 @@ describe('getArtisScreeningsFromHtml', () => {
         'http://www.kino.ee/Websales/Show/114011/?dt=24.01.2017',
         'http://www.kino.ee/Websales/Show/113893/?dt=24.01.2017',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -78,7 +78,7 @@ describe('getArtisScreeningsFromHtml', () => {
       const languages = screenings.map(screening => screening.language);
 
       expect(languages).toEqual(['et', null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -86,7 +86,7 @@ describe('getArtisScreeningsFromHtml', () => {
       const dimensions = screenings.map(screening => screening.dimensions);
 
       expect(dimensions).toEqual([null, null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -94,6 +94,6 @@ describe('getArtisScreeningsFromHtml', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, false, false, false]);
-    }),
+    })
   );
 });

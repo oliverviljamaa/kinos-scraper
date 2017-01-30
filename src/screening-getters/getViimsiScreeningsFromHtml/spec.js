@@ -6,7 +6,7 @@ describe('getViimsiScreeningsFromHtml', () => {
   it('gets correct number of screenings', () =>
     getViimsiScreeningsFromHtml(testHtml).then((screenings) => {
       expect(screenings).toHaveLength(7);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -22,7 +22,7 @@ describe('getViimsiScreeningsFromHtml', () => {
         'xXx: The Return of Xander Cage',
         'American Pastoral',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -30,7 +30,7 @@ describe('getViimsiScreeningsFromHtml', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([2016, 2015, 2015, 2015, 2016, 2016, 2016]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -46,7 +46,7 @@ describe('getViimsiScreeningsFromHtml', () => {
         'xXx: Käima tõmmatud',
         'Ameerika pastoraal',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -62,7 +62,7 @@ describe('getViimsiScreeningsFromHtml', () => {
         new Date(2017, 0, 24, 19, 10),
         new Date(2017, 0, 24, 21, 55),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -78,7 +78,7 @@ describe('getViimsiScreeningsFromHtml', () => {
         'http://www.viimsikino.ee/Websales/Show/139616/',
         'http://www.viimsikino.ee/Websales/Show/139609/',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -86,7 +86,7 @@ describe('getViimsiScreeningsFromHtml', () => {
       const languages = screenings.map(screening => screening.language);
 
       expect(languages).toEqual(['et', null, null, null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -94,7 +94,7 @@ describe('getViimsiScreeningsFromHtml', () => {
       const dimensions = screenings.map(screening => screening.dimensions);
 
       expect(dimensions).toEqual([null, 5, 5, 5, 3, 3, null]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -102,6 +102,6 @@ describe('getViimsiScreeningsFromHtml', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, false, false, false, false, false]);
-    }),
+    })
   );
 });

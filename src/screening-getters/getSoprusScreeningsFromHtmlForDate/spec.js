@@ -8,7 +8,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
   it('gets correct number of screenings', () =>
     getSoprusScreeningsFromHtmlForDate(testHtml, date).then((screenings) => {
       expect(screenings).toHaveLength(3);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -16,7 +16,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
       const titles = screenings.map(screening => screening.title);
 
       expect(titles).toEqual([null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -24,7 +24,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([2016, 2016, 2016]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -36,7 +36,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
         'Inimene kaamera taga',
         '21 x New York',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -48,7 +48,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
         new Date(2017, 0, 26, 18, 30),
         new Date(2017, 0, 26, 20, 30),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -60,7 +60,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
         'http://kinosoprus.ee//et/movie/inimene-kaamera-taga',
         'http://kinosoprus.ee//et/movie/21-x-new-york',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -68,7 +68,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
       const languages = screenings.map(screening => screening.language);
 
       expect(languages).toEqual([null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -76,7 +76,7 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
       const dimensions = screenings.map(screening => screening.dimensions);
 
       expect(dimensions).toEqual([null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -84,6 +84,6 @@ describe('getSoprusScreeningsFromHtmlForDate', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, false]);
-    }),
+    })
   );
 });

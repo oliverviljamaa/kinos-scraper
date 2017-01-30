@@ -19,17 +19,17 @@ const removeQuotesFromString = string => string.replace(/[«»]/g, '');
 const removeCampaigns = string => string.replace('Klassiga kinno: ', '');
 
 const getEstonianTitle = node => removeCampaigns(removeUnnecessarySpaces(removeQuotesFromString(
-  node.querySelector('a').textContent,
+  node.querySelector('a').textContent
 )));
 
 const getYear = node => parseInt(removeUnnecessarySpaces(
-  [...node.querySelector('.meta').textContent.split('/')].pop(),
+  [...node.querySelector('.meta').textContent.split('/')].pop()
 ), 10);
 
 const getLinkFromNode = node => `http://kinosoprus.ee/${node.querySelector('a').href}`;
 
 const getHoursAndMinutesFromNode = node => removeUnnecessarySpaces(
-  node.querySelector('.date-display-single').textContent,
+  node.querySelector('.date-display-single').textContent
 ).split(':');
 
 const getTimeFromNodeForDate = (node, date) =>
@@ -37,7 +37,7 @@ const getTimeFromNodeForDate = (node, date) =>
     date.getFullYear(),
     date.getMonth(),
     date.getDate(),
-    ...getHoursAndMinutesFromNode(node),
+    ...getHoursAndMinutesFromNode(node)
   );
 
 const getScreeningsFromHtmlForDate = (html, date) =>

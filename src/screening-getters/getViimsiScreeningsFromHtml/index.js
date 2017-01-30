@@ -9,7 +9,7 @@ const { getLanguage, getDimensions } = require('../movieFormatUtils');
 const getMovieNodesFromDocument = document => findAll(document, '.table-movies-row');
 
 const getEstonianTitleAndFormat = node => removeUnnecessarySpaces(
-  node.querySelector('.movies-desc-title a').textContent,
+  node.querySelector('.movies-desc-title a').textContent
 );
 
 const isFormatInfo = string => string.includes('keeles')
@@ -38,7 +38,7 @@ const getDimensionsFromFormat = format => // eslint-disable-line no-confusing-ar
   format ? getDimensions(format) : null;
 
 const getTitleAndYear = node => removeUnnecessarySpaces(
-  node.querySelector('.movies-desc-alt-title a').textContent,
+  node.querySelector('.movies-desc-alt-title a').textContent
 );
 
 const splitTitleAndYear = (string) => {
@@ -62,7 +62,7 @@ const getSelectedDate = node => node.querySelector('select[name=dt] option[selec
 
 const getTimeForDocumentFromNode = (document, node) => moment(
   `${getSelectedDate(document)} ${removeUnnecessarySpaces(node.textContent)}`,
-  'DD.MM.YYYY HH:mm',
+  'DD.MM.YYYY HH:mm'
 ).toDate();
 
 const getLinkFromNode = node => `http://www.viimsikino.ee${node.href}`;

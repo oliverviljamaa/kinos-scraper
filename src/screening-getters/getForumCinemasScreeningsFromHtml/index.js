@@ -27,7 +27,7 @@ const getSelectedDate = node => node.querySelector('select[name=dt] option[selec
 
 const getTimeForDocumentFromNode = (document, node) => moment(
   `${getSelectedDate(document)} ${removeUnnecessarySpaces(node.textContent)}`,
-  'DD.MM.YYYY HH:mm',
+  'DD.MM.YYYY HH:mm'
 ).toDate();
 
 const getLinkFromNode = node => node.href;
@@ -35,7 +35,7 @@ const getLinkFromNode = node => node.href;
 const getScreeningsFromDocument = document =>
   getMovieNodesFromDocument(document).reduce((screenings, movieNode) => {
     const estonianTitle = removeUnnecessarySpaces(
-      movieNode.querySelector('.result_h4').textContent,
+      movieNode.querySelector('.result_h4').textContent
     );
 
     const formatNode = getFormatNode(movieNode);

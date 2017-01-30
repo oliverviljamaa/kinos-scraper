@@ -30,7 +30,7 @@ const getSelectedDate = node => node.querySelector('select[name=dt] option[selec
 
 const getTimeForDocumentFromNode = (document, node) => moment(
   `${getSelectedDate(document)} ${removeUnnecessarySpaces(node.textContent)}`,
-  'DD.MM.YYYY HH:mm',
+  'DD.MM.YYYY HH:mm'
 ).toDate();
 
 const getLinkFromNode = node => `http://www.kino.ee${node.href}`;

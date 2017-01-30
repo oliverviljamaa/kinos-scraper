@@ -6,7 +6,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
   it('gets correct number of screenings', () =>
     getForumCinemasScreeningsFromHtml(testHtml).then((screenings) => {
       expect(screenings).toHaveLength(5);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -20,7 +20,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
         'Три богатыря и Морской царь',
         "Assassin's Creed",
       ]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -28,7 +28,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([null, null, null, null, null]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -42,7 +42,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
         'Kolm vägilast ja merekuningas',
         "Assassin's Creed",
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -56,7 +56,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
         new Date(2017, 0, 23, 13, 35),
         new Date(2017, 0, 23, 14, 45),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -70,7 +70,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
         'https://www.forumcinemas.ee/Websales/Show/284522/',
         'https://www.forumcinemas.ee/Websales/Show/284514/',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -78,7 +78,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
       const languages = screenings.map(screening => screening.language);
 
       expect(languages).toEqual(['ru', 'ru', null, 'et', null]);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -86,7 +86,7 @@ describe('getForumCinemasScreeningsFromHtml', () => {
       const dimensions = screenings.map(screening => screening.dimensions);
 
       expect(dimensions).toEqual([null, null, null, null, 3]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -94,6 +94,6 @@ describe('getForumCinemasScreeningsFromHtml', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, false, false, false]);
-    }),
+    })
   );
 });

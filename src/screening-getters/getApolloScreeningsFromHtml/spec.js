@@ -6,7 +6,7 @@ describe('getApolloScreeningsFromHtml', () => {
   it('gets correct number of screenings', () =>
     getApolloScreeningsFromHtml(testHtml).then((screenings) => {
       expect(screenings).toHaveLength(8);
-    }),
+    })
   );
 
   it('gets screenings with title', () =>
@@ -23,7 +23,7 @@ describe('getApolloScreeningsFromHtml', () => {
         'xXx: The Return of Xander Cage',
         'xXx: The Return of Xander Cage',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with year', () =>
@@ -31,7 +31,7 @@ describe('getApolloScreeningsFromHtml', () => {
       const years = screenings.map(screening => screening.year);
 
       expect(years).toEqual([2016, 2016, 2016, 2016, 2017, 2017, 2017, 2017]);
-    }),
+    })
   );
 
   it('gets screenings with Estonian title', () =>
@@ -48,7 +48,7 @@ describe('getApolloScreeningsFromHtml', () => {
         'xXx: Käima tõmmatud',
         'xXx: Käima tõmmatud',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with time', () =>
@@ -65,7 +65,7 @@ describe('getApolloScreeningsFromHtml', () => {
         new Date(2017, 0, 22, 20),
         new Date(2017, 0, 22, 22, 20),
       ]);
-    }),
+    })
   );
 
   it('gets screenings with link', () =>
@@ -82,7 +82,7 @@ describe('getApolloScreeningsFromHtml', () => {
         'https://www.apollokino.ee/Websales/Show/138572/?dt=22.01.2017',
         'https://www.apollokino.ee/Websales/Show/138573/?dt=22.01.2017',
       ]);
-    }),
+    })
   );
 
   it('gets screenings with language', () =>
@@ -99,7 +99,7 @@ describe('getApolloScreeningsFromHtml', () => {
         null,
         null,
       ]);
-    }),
+    })
   );
 
   it('gets screenings with dimensions', () =>
@@ -116,7 +116,7 @@ describe('getApolloScreeningsFromHtml', () => {
         3,
         null,
       ]);
-    }),
+    })
   );
 
   it('gets screenings with imax', () =>
@@ -124,6 +124,6 @@ describe('getApolloScreeningsFromHtml', () => {
       const imaxes = screenings.map(screening => screening.isImax);
 
       expect(imaxes).toEqual([false, false, false, false, false, false, false, false]);
-    }),
+    })
   );
 });
