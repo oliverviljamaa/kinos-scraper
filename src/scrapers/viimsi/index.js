@@ -1,5 +1,5 @@
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getViimsiScreeningsFromHtml = require('../../screening-getters/getViimsiScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getViimsiScreeningsFromHtml = require('../../screening-getters/viimsi');
 
 const scrapeForDate = date =>
   loadMarkusHtml('http://www.viimsikino.ee', 1003, date)

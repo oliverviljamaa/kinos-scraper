@@ -1,11 +1,11 @@
 const MustamaeScraper = require('./');
 
-jest.mock('../../html-loaders/loadMarkusHtml', () => jest.fn(() => Promise.resolve('HTML')));
-jest.mock('../../screening-getters/getApolloScreeningsFromHtml', () => jest.fn(() => Promise.resolve([
+jest.mock('../../html-loaders/markus', () => jest.fn(() => Promise.resolve('HTML')));
+jest.mock('../../screening-getters/apollo', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getApolloScreeningsFromHtml = require('../../screening-getters/getApolloScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getApolloScreeningsFromHtml = require('../../screening-getters/apollo');
 
 const date = new Date(2017, 0, 30);
 

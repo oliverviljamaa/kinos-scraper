@@ -1,11 +1,11 @@
 const CcPlazaScraper = require('./');
 
-jest.mock('../../html-loaders/loadMarkusHtml', () => jest.fn(() => Promise.resolve('HTML')));
-jest.mock('../../screening-getters/getForumCinemasScreeningsFromHtml', () => jest.fn(() => Promise.resolve([
+jest.mock('../../html-loaders/markus', () => jest.fn(() => Promise.resolve('HTML')));
+jest.mock('../../screening-getters/forum-cinemas', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getForumCinemasScreeningsFromHtml = require('../../screening-getters/getForumCinemasScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getForumCinemasScreeningsFromHtml = require('../../screening-getters/forum-cinemas');
 
 const date = new Date(2017, 0, 30);
 

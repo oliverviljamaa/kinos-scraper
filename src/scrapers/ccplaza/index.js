@@ -1,5 +1,5 @@
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getForumCinemasScreeningsFromHtml = require('../../screening-getters/getForumCinemasScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getForumCinemasScreeningsFromHtml = require('../../screening-getters/forum-cinemas');
 
 const scrapeForDate = date =>
   loadMarkusHtml('https://www.forumcinemas.ee', 1008, date)

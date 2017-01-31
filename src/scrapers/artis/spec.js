@@ -1,11 +1,11 @@
 const ArtisScraper = require('./');
 
-jest.mock('../../html-loaders/loadMarkusHtml', () => jest.fn(() => Promise.resolve('HTML')));
-jest.mock('../../screening-getters/getArtisScreeningsFromHtml', () => jest.fn(() => Promise.resolve([
+jest.mock('../../html-loaders/markus', () => jest.fn(() => Promise.resolve('HTML')));
+jest.mock('../../screening-getters/artis', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getArtisScreeningsFromHtml = require('../../screening-getters/getArtisScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getArtisScreeningsFromHtml = require('../../screening-getters/artis');
 
 const date = new Date(2017, 0, 30);
 

@@ -1,5 +1,5 @@
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getArtisScreeningsFromHtml = require('../../screening-getters/getArtisScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getArtisScreeningsFromHtml = require('../../screening-getters/artis');
 
 const scrapeForDate = date =>
   loadMarkusHtml('http://www.kino.ee', 1002, date)

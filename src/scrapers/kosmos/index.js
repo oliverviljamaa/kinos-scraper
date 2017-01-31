@@ -1,5 +1,5 @@
-const loadKosmosHtml = require('../../html-loaders/loadKosmosHtml');
-const getKosmosScreeningsFromHtmlForDate = require('../../screening-getters/getKosmosScreeningsFromHtmlForDate');
+const loadKosmosHtml = require('../../html-loaders/kosmos');
+const getKosmosScreeningsFromHtmlForDate = require('../../screening-getters/kosmos');
 
 const scrapeForDate = date =>
   loadKosmosHtml()

@@ -1,11 +1,11 @@
 const KosmosScraper = require('./');
 
-jest.mock('../../html-loaders/loadKosmosHtml', () => jest.fn(() => Promise.resolve('HTML')));
-jest.mock('../../screening-getters/getKosmosScreeningsFromHtmlForDate', () => jest.fn(() => Promise.resolve([
+jest.mock('../../html-loaders/kosmos', () => jest.fn(() => Promise.resolve('HTML')));
+jest.mock('../../screening-getters/kosmos', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
-const loadKosmosHtml = require('../../html-loaders/loadKosmosHtml');
-const getKosmosScreeningsFromHtmlForDate = require('../../screening-getters/getKosmosScreeningsFromHtmlForDate');
+const loadKosmosHtml = require('../../html-loaders/kosmos');
+const getKosmosScreeningsFromHtmlForDate = require('../../screening-getters/kosmos');
 
 const date = new Date(2017, 0, 30);
 

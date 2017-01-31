@@ -1,5 +1,5 @@
-const loadSoprusHtml = require('../../html-loaders/loadSoprusHtml');
-const getSoprusScreeningsFromHtmlForDate = require('../../screening-getters/getSoprusScreeningsFromHtmlForDate');
+const loadSoprusHtml = require('../../html-loaders/soprus');
+const getSoprusScreeningsFromHtmlForDate = require('../../screening-getters/soprus');
 
 const scrapeForDate = date =>
   loadSoprusHtml()

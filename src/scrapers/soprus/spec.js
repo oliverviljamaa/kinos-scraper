@@ -1,11 +1,11 @@
 const SoprusScraper = require('./');
 
-jest.mock('../../html-loaders/loadSoprusHtml', () => jest.fn(() => Promise.resolve('HTML')));
-jest.mock('../../screening-getters/getSoprusScreeningsFromHtmlForDate', () => jest.fn(() => Promise.resolve([
+jest.mock('../../html-loaders/soprus', () => jest.fn(() => Promise.resolve('HTML')));
+jest.mock('../../screening-getters/soprus', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
-const loadSoprusHtml = require('../../html-loaders/loadSoprusHtml');
-const getSoprusScreeningsFromHtmlForDate = require('../../screening-getters/getSoprusScreeningsFromHtmlForDate');
+const loadSoprusHtml = require('../../html-loaders/soprus');
+const getSoprusScreeningsFromHtmlForDate = require('../../screening-getters/soprus');
 
 const date = new Date(2017, 0, 30);
 

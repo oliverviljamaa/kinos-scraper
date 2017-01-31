@@ -1,5 +1,5 @@
-const loadMarkusHtml = require('../../html-loaders/loadMarkusHtml');
-const getScreeningsFromHtml = require('../../screening-getters/getApolloScreeningsFromHtml');
+const loadMarkusHtml = require('../../html-loaders/markus');
+const getScreeningsFromHtml = require('../../screening-getters/apollo');
 
 const scrapeForDate = date =>
   loadMarkusHtml('https://www.apollokino.ee', 1005, date)
