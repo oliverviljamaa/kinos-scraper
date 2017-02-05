@@ -4,8 +4,12 @@ jest.mock('../../html-loaders/markus', () => jest.fn(() => Promise.resolve('HTML
 jest.mock('../../screening-getters/artis', () => jest.fn(() => Promise.resolve([
   {}, {}, {},
 ])));
+jest.mock('../../transformers/groupByMovie', () => jest.fn(() => Promise.resolve([
+  {}, {},
+])));
 const loadMarkusHtml = require('../../html-loaders/markus');
 const getArtisScreeningsFromHtml = require('../../screening-getters/artis');
+const groupByMovie = require('../../transformers/groupByMovie');
 
 const date = new Date(2017, 0, 30);
 
@@ -13,6 +17,7 @@ describe('ArtisScraper', () => {
   afterEach(() => {
     loadMarkusHtml.mockClear();
     getArtisScreeningsFromHtml.mockClear();
+    groupByMovie.mockClear();
   });
 
   it('calls loadMarkusHtml with correct params', () =>
@@ -25,18 +30,23 @@ describe('ArtisScraper', () => {
       expect(getArtisScreeningsFromHtml).toHaveBeenCalledWith('HTML');
     }));
 
+  it('calls groupByMovie with received screenings', () =>
+    ArtisScraper.scrapeForDate(date).then(() => {
+      expect(groupByMovie).toHaveBeenCalledWith([{}, {}, {}]);
+    }));
+
   it('returns object with cinema alias', () =>
-    ArtisScraper.scrapeForDate(date).then((screeningsObj) => {
-      expect(screeningsObj.cinema).toBe('artis');
+    ArtisScraper.scrapeForDate(date).then((obj) => {
+      expect(obj.cinema).toBe('artis');
     }));
 
   it('returns object with date', () =>
-    ArtisScraper.scrapeForDate(date).then((screeningsObj) => {
-      expect(screeningsObj.date).toBe(date);
+    ArtisScraper.scrapeForDate(date).then((obj) => {
+      expect(obj.date).toBe(date);
     }));
 
-  it('returns object with screenings', () =>
-    ArtisScraper.scrapeForDate(date).then((screeningsObj) => {
-      expect(screeningsObj.screenings).toEqual([{}, {}, {}]);
+  it('returns object with movies', () =>
+    ArtisScraper.scrapeForDate(date).then((obj) => {
+      expect(obj.movies).toEqual([{}, {}]);
     }));
 });
