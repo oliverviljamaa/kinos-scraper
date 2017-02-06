@@ -1,6 +1,10 @@
 {
   "name": "kinos-scraper",
   "version": "0.1.0",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
@@ -16,7 +20,6 @@
     "eslint": "^3.13.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
-    "fs-promise": "^1.0.0",
     "jest": "^18.1.0"
   },
   "dependencies": {
